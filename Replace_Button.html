@@ -1,1 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Get IP</title>
+</head>
+<body>
+    <button id="getIpButton">Get IP</button>
+
+    <script>
+        document.getElementById("getIpButton").addEventListener("click", function() {
+            let fetchRes = fetch("https://api.ipify.org/?format=json")
+             fetchRes.then(res =>
+                   res.json()).then(d => {
+                    
+                    document.getElementById("getIpButton").textContent = d.ip;
+                });
+        });
+    </script>
+</body>
+</html>
 
